@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "86315ff3-9494-4ce2-bd95-9c8565825754",
+		"name": "Account Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List accounts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_root}}/api/accounts",
+					"host": [
+						"{{server_root}}"
+					],
+					"path": [
+						"api",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get account",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_root}}/api/accounts/1000000",
+					"host": [
+						"{{server_root}}"
+					],
+					"path": [
+						"api",
+						"accounts",
+						"1000000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find account  by lastname",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_root}}/api/accounts/search/findByLastname?lastname=Mayer",
+					"host": [
+						"{{server_root}}"
+					],
+					"path": [
+						"api",
+						"accounts",
+						"search",
+						"findByLastname"
+					],
+					"query": [
+						{
+							"key": "lastname",
+							"value": "Mayer"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find account  by lastname containing",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_root}}/api/accounts/search/findByLastnameContaining?text=on",
+					"host": [
+						"{{server_root}}"
+					],
+					"path": [
+						"api",
+						"accounts",
+						"search",
+						"findByLastnameContaining"
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "on"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create account",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"accountNumber\": 3000000,\r\n  \"firstname\": \"Peter\",\r\n  \"lastname\": \"Clapton\",\r\n  \"balance\": 999\r\n}"
+				},
+				"url": {
+					"raw": "{{server_root}}/api/accounts",
+					"host": [
+						"{{server_root}}"
+					],
+					"path": [
+						"api",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete account",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{server_root}}/api/accounts/2000000",
+					"host": [
+						"{{server_root}}"
+					],
+					"path": [
+						"api",
+						"accounts",
+						"2000000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update account",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"accountNumber\": 2000000,\r\n  \"firstname\": \"Eric\",\r\n  \"lastname\": \"Clapton\",\r\n  \"balance\": 8888\r\n}"
+				},
+				"url": {
+					"raw": "{{server_root}}/api/accounts/2000000",
+					"host": [
+						"{{server_root}}"
+					],
+					"path": [
+						"api",
+						"accounts",
+						"2000000"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
