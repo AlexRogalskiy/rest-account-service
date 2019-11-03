@@ -43,9 +43,9 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
                 .withUser("demo").password(passwordEncoder().encode("demo"))
-                .authorities("USER").and()
+                .roles("USER").and()
                 .withUser("admin").password(passwordEncoder().encode("admin"))
-                .authorities("ADMIN");
+                .roles("ADMIN");
     }
 
     @Override
@@ -55,8 +55,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .exceptionHandling()
                 .authenticationEntryPoint(restAuthEntryPoint).and()
                 .authorizeRequests()
-                .antMatchers("/service/**").authenticated()
-                .antMatchers("/admin").hasRole("ADMIN").and()
+                .antMatchers("/service/**").hasRole("USER")
+                .antMatchers("/admin/**").hasRole("ADMIN").and()
 //                .antMatchers(HttpMethod.GET, "/services/**").hasAnyRole("USER", "ADMIN")
 //                .antMatchers(HttpMethod.POST, "/services/**").hasAnyRole("USER", "ADMIN")
 //                .antMatchers(HttpMethod.DELETE, "/services/**").hasAnyRole("USER", "ADMIN").and()

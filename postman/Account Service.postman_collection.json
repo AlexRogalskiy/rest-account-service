@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "86315ff3-9494-4ce2-bd95-9c8565825754",
+		"_postman_id": "f0cce4cc-186d-455b-b8c1-9297d4e662e0",
 		"name": "Account Service",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,12 +11,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{server_root}}/api/accounts",
+					"raw": "{{server_root}}/service/accounts",
 					"host": [
 						"{{server_root}}"
 					],
 					"path": [
-						"api",
+						"service",
 						"accounts"
 					]
 				}
@@ -29,12 +29,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{server_root}}/api/accounts/1000000",
+					"raw": "{{server_root}}/service/accounts/1000000",
 					"host": [
 						"{{server_root}}"
 					],
 					"path": [
-						"api",
+						"service",
 						"accounts",
 						"1000000"
 					]
@@ -48,12 +48,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{server_root}}/api/accounts/search/findByLastname?lastname=Mayer",
+					"raw": "{{server_root}}/service/accounts/search/findByLastname?lastname=Mayer",
 					"host": [
 						"{{server_root}}"
 					],
 					"path": [
-						"api",
+						"service",
 						"accounts",
 						"search",
 						"findByLastname"
@@ -74,12 +74,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{server_root}}/api/accounts/search/findByLastnameContaining?text=on",
+					"raw": "{{server_root}}/service/accounts/search/findByLastnameContaining?text=on",
 					"host": [
 						"{{server_root}}"
 					],
 					"path": [
-						"api",
+						"service",
 						"accounts",
 						"search",
 						"findByLastnameContaining"
@@ -110,12 +110,12 @@
 					"raw": "{\r\n  \"accountNumber\": 3000000,\r\n  \"firstname\": \"Peter\",\r\n  \"lastname\": \"Clapton\",\r\n  \"balance\": 999\r\n}"
 				},
 				"url": {
-					"raw": "{{server_root}}/api/accounts",
+					"raw": "{{server_root}}/service/accounts",
 					"host": [
 						"{{server_root}}"
 					],
 					"path": [
-						"api",
+						"service",
 						"accounts"
 					]
 				}
@@ -135,12 +135,12 @@
 					}
 				],
 				"url": {
-					"raw": "{{server_root}}/api/accounts/2000000",
+					"raw": "{{server_root}}/service/accounts/2000000",
 					"host": [
 						"{{server_root}}"
 					],
 					"path": [
-						"api",
+						"service",
 						"accounts",
 						"2000000"
 					]
@@ -164,18 +164,55 @@
 					"raw": "{\r\n  \"accountNumber\": 2000000,\r\n  \"firstname\": \"Eric\",\r\n  \"lastname\": \"Clapton\",\r\n  \"balance\": 8888\r\n}"
 				},
 				"url": {
-					"raw": "{{server_root}}/api/accounts/2000000",
+					"raw": "{{server_root}}/service/accounts/2000000",
 					"host": [
 						"{{server_root}}"
 					],
 					"path": [
-						"api",
+						"service",
 						"accounts",
 						"2000000"
 					]
 				}
 			},
 			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "demo",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "demo",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "828d3f3d-d165-4449-8e93-a6d5716a37f6",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "122f5249-da0b-4ae7-b668-f559f054df31",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	],
 	"protocolProfileBehavior": {}
