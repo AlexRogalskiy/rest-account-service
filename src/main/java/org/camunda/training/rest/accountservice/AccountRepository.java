@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-//@RepositoryRestResource only requiredto change export details
+//@RepositoryRestResource only required to change export details
 public interface AccountRepository extends PagingAndSortingRepository<Account, Long> {
 
     List<Account> findByLastname(String lastname);
