@@ -9,6 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/*
+  The default BasicAuthenticationEntryPoint returns a full page for a 401 Unauthorized response.
+  This HTML representation is it suitable for REST API where a json representation is preferred.
+*/
+
+
 @Component
 public class RestAuthEntryPoint extends BasicAuthenticationEntryPoint {
 
